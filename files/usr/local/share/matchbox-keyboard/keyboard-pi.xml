@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Modded by 123456 for http://smartqmid.ru
+v1.1
+Please check http://kc.vc/projects/matchbox-keyboard.html
+-->
+<keyboard>
+    <options></options>
+    <layout id="default">
+        <row>
+            <key width="25" fill="true">
+                <mod3 display="[" />
+                <mod1 display="1" />
+                <default display="q" />
+                <shifted display="Q" />
+            </key>
+            <key width="25" fill="true">
+                <mod3 display="]" />
+                <mod1 display="2" />
+                <default display="w" />
+                <shifted display="W" />
+            </key>
+            <key width="25" fill="true">
+                <mod3 display="{" />
+                <mod1 display="3" />
+                <default display="e" />
+                <shifted display="E" />
+            </key>
+            <key width="25" fill="true">
+                <mod3 display="}" />
+                <mod1 display="4" />
+                <default display="r" />
+                <shifted display="R" />
+            </key>
+            <key width="25" fill="true">
+                <mod3 display="#" />
+                <mod1 display="5" />
+                <default display="t" />
+                <shifted display="T" />
+            </key>
+            <key width="25" fill="true">
+                <mod3 display="%" />
+                <mod1 display="6" />
+                <default display="y" />
+                <shifted display="Y" />
+            </key>
+            <key width="25" fill="true">
+                <mod3 display="^" />
+                <mod1 display="7" />
+                <default display="u" />
+                <shifted display="U" />
+            </key>
+            <key width="25" fill="true">
+                <mod3 display="*" />
+                <mod1 display="8" />
+                <default display="i" />
+                <shifted display="I" />
+            </key>
+            <key width="25" fill="true">
+                <mod3 display="+" />
+                <mod1 display="9" />
+                <default display="o" />
+                <shifted display="O" />
+            </key>
+            <key width="25" fill="true">
+                <mod3 display="=" />
+                <mod1 display="0" />
+                <default display="p" />
+                <shifted display="P" />
+            </key>
+        </row>
+        <row>
+        	<key width="13">
+        		<default display="image:/usr/local/share/matchbox-keyboard/ctrl.png" action="modifier:ctrl" />
+        	</key>
+            <key width="25" fill="true">
+                <mod1 display="-" />
+                <mod3 display="_" />
+                <default display="a" />
+                <shifted display="A" />
+            </key>
+            <key width="25" fill="true">
+                <mod1 display="/" />
+                <mod3 display="\" />
+                <default display="s" />
+                <shifted display="S" />
+            </key>
+            <key width="25" fill="true">
+                <mod1 display=":" />
+                <mod3 display="|" />
+                <default display="d" />
+                <shifted display="D" />
+            </key>
+            <key width="25" fill="true">
+                <mod1 display=";" />
+                <mod3 display="~" />
+                <default display="f" />
+                <shifted display="F" />
+            </key>
+            <key width="25" fill="true">
+                <mod1 display="(" />
+                <mod3 display="&lt;" />
+                <default display="g" />
+                <shifted display="G" />
+            </key>
+            <key width="25" fill="true">
+                <mod1 display=")" />
+                <mod3 display="&gt;" />
+                <default display="h" />
+                <shifted display="H" />
+            </key>
+            <key width="25" fill="true">
+                <mod1 display="$" />
+                <mod3 display="€" />
+                <default display="j" />
+                <shifted display="J" />
+            </key>
+            <key width="25" fill="true">
+                <mod1 display="@" />
+                <mod3 display="£" />
+                <default display="k" />
+                <shifted display="K" />
+            </key>
+            <key width="25" fill="true">
+                <mod1 display='"' />
+                <mod3 display="¥" />
+                <default display="l" />
+                <shifted display="L" />
+            </key>
+        	<key width="13">
+        		<default display="image:/usr/local/share/matchbox-keyboard/alt.png" action="modifier:alt" />
+        	</key>
+        </row>
+        <row>
+            <key width="40" fill="true">
+	        	<default display="⇧" action="modifier:shift"/>
+	        	<mod1 display=" " action=""/>
+	        	<mod3 display=" " action=""/>                 
+            </key>
+            <key width="25" fill="true">
+                <mod1 display="." />
+                <mod3 display="." />
+                <default display="z" />
+                <shifted display="Z" />
+            </key>
+            <key width="25" fill="true">
+                <mod1 display="," />
+                <mod3 display="," />
+                <default display="x" />
+                <shifted display="X" />
+            </key>
+            <key width="25" fill="true">
+                <mod1 display="?" />
+                <mod3 display="?" />
+                <default display="c" />
+                <shifted display="C" />
+            </key>
+            <key width="25" fill="true">
+                <mod1 display="!" />
+                <mod3 display="!" />
+                <default display="v" />
+                <shifted display="V" />
+            </key>
+            <key width="25" fill="true">
+                <mod1 display="'" />
+                <mod3 display="'" />
+                <default display="b" />
+                <shifted display="B" />
+            </key>
+            <key width="25" fill="true">
+                <mod1 display="&amp;" />
+                <mod3 display="&amp;" />
+                <default display="n" />
+                <shifted display="N" />
+            </key>
+            <key width="25" fill="true">
+                <mod1 display="§" />
+                <mod3 display="`" />
+                <default display="m" />
+                <shifted display="M" />
+            </key>
+            <key width="50" fill="true">
+                <default display="⌫" action="backspace" />
+            </key>
+        </row>
+        <row>
+           <key width="40">
+	        	<default display="123" action="modifier:mod1"/>
+           	</key>
+            <key width="40">
+	        	<default display="#+=" action="modifier:mod3"/>
+           	</key>
+           	<key fill="true">
+	       		<default display=" " action="space" />                
+           	</key>
+           	<key width="30">
+           		<default display="⇅⇆" action="modifier:layout" />
+           	</key>
+           	<key width="50">
+               <default display="↵" action="return"/>
+           	</key>
+
+        </row>
+
+    </layout>
+
+	<layout id="arrows">    
+        <row>
+            <key width="25" fill="true">
+                <default display="F1" action="f1" />
+            </key>
+            <key width="25" fill="true">
+                <default display="F2" action="f2" />
+            </key>
+            <key width="25" fill="true">
+                <default display="F3" action="f3" />
+            </key>
+            <key width="25" fill="true">
+                <default display="F4" action="f4" />
+            </key>
+            <key width="25" fill="true">
+                <default display="F5" action="f5" />
+            </key>
+            <key width="25" fill="true">
+                <default display="F6" action="f6" />
+            </key>
+            <key width="25" fill="true">
+                <default display="F7" action="f7" />
+            </key>
+            <key width="25" fill="true">
+                <default display="F8" action="f8" />
+            </key>
+            <key width="25" fill="true">
+                <default display="F9" action="f9" />
+            </key>
+            <key width="35" fill="true">
+                <default display="F10" action="f10" />
+            </key>
+        </row>
+        <row>
+        	<key width="40" fill="true">
+        		<default display="Esc" action="escape" />
+        	</key>
+        	<key width="40" fill="true">
+        		<default display="Tab" action="tab" />
+        	</key>
+        	<key width="40" fill="true">
+        		<default display="⇱" action="home" />
+        	</key>
+        	<key width="40" fill="true">
+        		<default display="⇲" action="end" />
+        	</key>
+        	<key width="70">
+        		<default display="PgUp" action="pageup" />
+        	</key>
+        </row>
+        <row>
+            <key width="40">
+	        	<default display="⇧" action="modifier:shift"/>
+	        	<mod1 display=" " action=""/>
+	        	<mod3 display=" " action=""/>                 
+            </key>
+        	<key width="40">
+        		<default display="←" action="left" />
+        	</key>
+        	<key width="40">
+        		<default display="↑" action="up" />
+        	</key>
+        	<key width="40">
+        		<default display="→" action="right" />
+        	</key>
+        	<key width="40" fill="true">
+        		<default display="Ins" action="insert" />
+        	</key>
+        	<key width="40" fill="true">
+        		<default display="Del" action="delete" />
+        	</key>
+        	<key width="70">
+        		<default display="PgDn" action="pagedown" />
+        	</key>        	
+        </row>
+        <row>
+        	<key width="40">
+        		<default display="Ctrl" action="modifier:ctrl" />
+        	</key>
+        	<key width="40">
+        		<default display="Alt" action="modifier:alt" />
+        	</key>
+        	<key width="40">
+        		<default display="↓" action="down" />
+        	</key>
+           	<key fill="true">
+	       		<default display=" " action="space" />                
+           	</key>
+           	<key width="40">
+           		<default display="abc" action="modifier:layout" />
+           	</key>
+           	<key width="50">
+               <default display="↵" action="return"/>
+           	</key>
+
+        </row>
+
+    </layout>
+
+</keyboard>
+
