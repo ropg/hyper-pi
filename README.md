@@ -178,9 +178,3 @@ fi
 * Install 'netsurf', a tiny browser that renders a bit better than chromium on such a narrow display.<br><br>`sudo apt install netsurf`
 
 * Reboot and wait for the system to come back.<br><br>`sudo reboot`
-
-&nbsp;
-
-## Using the system
-
-You should now be able to toggle the keyboard on and off by hitting the little keyboard icon in the top left of the screen.
