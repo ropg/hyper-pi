@@ -14,7 +14,7 @@ The end product is a device that centers on the Hyperpixel 4" 800x480 pixels cap
 
 ### Current stage: prototyping
 
-This is unfinished work: a 3D-printed enclosure is in the works and currently this describes how to build a wired up tabletop prototype of the components that are scheduled to go into the first version of the enclosure. 
+This is unfinished work: a 3D-printed enclosure is in the works and currently this describes how to build a wired up tabletop prototype of the components that are scheduled to go into the first version of the enclosure. At this stage, this project might be for you if you like tinkering with linux, can solder wires onto circuit boards and can spare something like 150 euros on something that is fun to play with but may or may not be actually useful to you.
 
 &nbsp;
 
@@ -83,7 +83,7 @@ After you carefully plug the Pi Zero into the display, you should now have a tab
 
 ### Prepare the SD-card
 
-At first the screen is not going to work. What that means is that we want to prepare the Pi for headless operation, meaning it can work without a monitor and keyboard attached. Here's the steps to create an SD-card that will instruct the Pi to boot, log in to your wifi and start an ssh daemon for you to log in over the wifi.
+At first the screen is not going to work. What that means is that we want to prepare the Pi for "headless" operation, meaning it can work without a monitor and keyboard attached. Here's the steps to create an SD-card that will instruct the Pi to boot, connect to your wifi and start an ssh daemon for you to log in over the wifi.
 
 * Insert your SD-card in a reader on your computer
 
@@ -113,7 +113,7 @@ network={
 
 * Turn on the Pi. You'll see the led come on, but nothing will happen on the screen. You can try pinging the pi from your computer using `ping raspberrypi.local` or (sometimes .local doesn't work) try to figure out what IP number it got from your router and ping that. The first time it will boot, resize the partition on the SD-card and then boot again, this is normal. After this is all done, it should sit there and wait for you to use ssh to get in. The username is 'pi', the password is 'raspberry'.
 
-* I copy my ssh pubkey to the Pi by executing (on my own Mac) `ssh pi@raspberrypi.local 'mkdir .ssh'` followed by `scp ~/.ssh/id_rsa.pub pi@raspberrypi.local:~/.ssh/authorized_keys` so I don't have to type a password every time. This step is optional.
+* I copy my ssh pubkey to the Pi by executing (on my own Mac):<br><br>`ssh pi@raspberrypi.local 'mkdir .ssh'`<br>`scp ~/.ssh/id_rsa.pub pi@raspberrypi.local:~/.ssh/authorized_keys`<br><br> so I don't have to type a password every time. This step is optional.
 
 * Now use `ssh pi@raspberrypi.local` to log into the Pi and enter `passwd` to change the password. This step is NOT optional.
 
@@ -124,54 +124,57 @@ Now let's make the screen work.
 
 * Make sure you are still logged into the Raspberry Pi via ssh
 
-* Execute the following commands. Copy-paste them in groups as shown, so you can try to figure out what the problem is, should something go wrong.  
+* Install the driver:<br><br>`git clone https://github.com/pimoroni/hyperpixel4`<br>`cd hyperpixel4`<br>`sudo ./install.sh`
 
-Installing the driver:
+> (If you want a landscape screen orientation, you are done with the screen now, and you can skip the next few steps and continue at `sudo reboot` below.)
 
-```
-git clone https://github.com/pimoroni/hyperpixel4
-cd hyperpixel4
-sudo ./install.sh
-```
+* Install dirstributed kernel module support and kernel-headers. (Note: It may seem like it's stuck, but it just takes a while.)<br><br>`sudo apt install dkms raspberrypi-kernel-headers`
 
-And then replace parts of it by an alternative driver that allows for portrait rotations:
+* Replace the touch screen driver by an alternative driver that allows for portrait rotations:<br><br>`wget https://github.com/pimoroni/HyperPixel4TouchScreen/releases/download/v1.0/hyperpixel4-goodix-dkms_1.0_all.deb`<br>`sudo dpkg -i hyperpixel4-goodix-dkms_1.0_all.deb`<br>`git clone https://github.com/pimoroni/HyperPixel4TouchScreen`<br>`cd HyperPixel4TouchScreen/driver`<br>`make build`<br>`sudo make install`
 
-```
-sudo apt install dkms raspberrypi-kernel-headers
-wget https://github.com/pimoroni/HyperPixel4TouchScreen/releases/download/v1.0/hyperpixel4-goodix-dkms_1.0_all.deb
-sudo dpkg -i hyperpixel4-goodix-dkms_1.0_all.deb
-```
-
-```
-git clone https://github.com/pimoroni/HyperPixel4TouchScreen
-cd HyperPixel4TouchScreen/driver
-make build
-sudo make install
-```
-
-* Now we will edit the file config.txt in the boot partition using `sudo nano /boot/config.txt`
-
-* Page to the section at the end of the file, and find the line that starts with `dtoverlay=hyperpixel4` and replace it with `dtoverlay=hyperpixel4:rotate_0`.
-
-* In that same section, find `framebuffer_width` and set it to 480, `framebuffer_height` (set to 800) and `display_rotate` (set to 0).
+* Then replace some of the settings in /boot/config.txt to adjust for portrait rotation:<br><br>`sudo sed -i 's/dtoverlay=hyperpixel4/dtoverlay=hyperpixel4:rotate_0/g' /boot/config.txt`<br>`sudo sed -i 's/framebuffer_width=800/framebuffer_width=480/g' /boot/config.txt`<br>`sudo sed -i 's/framebuffer_height=480/framebuffer_height=800/g' /boot/config.txt`<br>`sudo sed -i 's/display_rotate=3/display_rotate=0/g' /boot/config.txt`
 
 * Now enter `sudo reboot` and wait. Your device should wake up with a working touch screen.
 
-### Compile matchbox-keyboard 
+### On-screen keyboard
 
 To be able to display a keyboard that is really usable on this small screen, we are using a fork of the standard 'matchbox-keyboard' utility that allows different fonts on the keys and different layouts. 
 
-* ssh into your Pi again, and execute the following commands:
+* ssh into your Pi again, and install some packages needed to compile the kayboard:<br><br>`sudo apt install libtool autoconf libfakekey-dev libxft-dev`
+
+* Then get and compile the keybaord source.<br><br>`git clone https://github.com/xlab/matchbox-keyboard`<br>`cd  matchbox-keyboard`<br>`./autogen.sh`<br>`make`<br>`sudo make install`
+
+* `sudo nano /usr/share/applications/matchbox-keyboard.desktop` and put in the following:
 
 ```
-sudo apt install libtool autoconf libfakekey-dev libxft-dev
-git clone https://github.com/xlab/matchbox-keyboard
-cd  matchbox-keyboard
-./autogen.sh
-make
-sudo make install
+[Desktop Entry]
+Name=Toggle Matchbox Keyboard
+Comment=Toggle Matchbox Keyboard
+Exec=toggle-matchbox-keyboard.sh
+Type=Application
+Icon=matchbox-keyboard.png
+Categories=Panel;Utility;MB
+X-MB-INPUT-MECHANISM=True
 ```
 
+* `sudo nano /usr/local/bin/toggle-matchbox-keyboard.sh` and put in the following:
+
+```
+#!/bin/bash
+#This script toggles the virtual keyboard
+
+PID=`pidof matchbox-keyboard`
+if [ ! -e $PID ]; then
+  killall matchbox-keyboard
+else
+  MB_KBD_CONFIG=/usr/local/share/matchbox-keyboard/keyboard-pi.xml matchbox-keyboard -g 250 -s 13 -c 0 -r 0 -t &
+fi
+```
+
+* `sudo chmod a+x /usr/local/bin/toggle-matchbox-keyboard.sh`
+
+* Copy the keyboard definition file and to supporting png images:<br><br>`cd ~`<br>`git clone https://github.com/ropg/hyper-pi`<br>`sudo cp hyper-pi/files/keyboard/* /usr/local/share/matchbox-keyboard`
+ 
 ### Final configuration
 
 This copies over from this repository the files that I have modified to make this work. This includes the keyboard definition file, the toggle-matchbox-keyboard files to turn the keyboard on and off and the 'panel' file to set up the desktop.
