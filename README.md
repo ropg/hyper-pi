@@ -22,21 +22,13 @@ This is unfinished work: a 3D-printed enclosure is in the works and currently th
 
 ### Buying the components
 
-* At Pimoroni, order a [Hyperpixel 4.0 touch screen](https://shop.pimoroni.com/products/hyperpixel-4?variant=12569485443155) (GBP 42.50) and a [Raspberry Pi Zero WH](https://shop.pimoroni.com/products/raspberry-pi-zero-wh-with-pre-soldered-header) (GBP 13.02).
+* At Pimoroni, order a [Hyperpixel 4.0 touch screen](https://shop.pimoroni.com/products/hyperpixel-4?variant=12569485443155) (GBP 42.50) and a [Raspberry Pi Zero WH](https://shop.pimoroni.com/products/raspberry-pi-zero-wh-with-pre-soldered-header) (GBP 13.02).<br>[![](images/HyperPixel4.jpg)](https://shop.pimoroni.com/products/hyperpixel-4?variant=12569485443155) [![](images/Raspberry_Pi_Zero_WH.jpg)](https://shop.pimoroni.com/products/raspberry-pi-zero-wh-with-pre-soldered-header)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="images/HyperPixel4.jpg" width="300"/>](https://shop.pimoroni.com/products/hyperpixel-4?variant=12569485443155) [<img src="images/Raspberry_Pi_Zero_WH.jpg" width="160"/>](https://shop.pimoroni.com/products/raspberry-pi-zero-wh-with-pre-soldered-header)
+* Pimoroni also has SD-cards, but I got a [Sandisk Extreme Pro 64GB](https://www.amazon.de/gp/product/B07G3GMRYF/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) (EUR 22.99) on Amazon because the faster the card the faster the Pi boots and the differences between cards can be quite striking.<br>[![](images/sd.png)](https://www.amazon.de/gp/product/B07G3GMRYF/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
 
-* Pimoroni also has SD-cards, but I got a [Sandisk Extreme Pro 64GB](https://www.amazon.de/gp/product/B07G3GMRYF/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) (EUR 22.99) on Amazon because the faster the card the faster the Pi boots and the differences between cards can be quite striking.
+* Next, at Adafruit you'll want to order a [2500 mAh Lithium Polymer battery](https://www.adafruit.com/product/328) (USD 14.95) and a [PowerBoost 1000C battery charging and voltage boost circuit](https://learn.adafruit.com/adafruit-powerboost-1000c-load-share-usb-charge-boost) (USD 19.95).<br>[![](images/battery.png)](https://www.adafruit.com/product/328) [![](images/powerboost.png)](https://learn.adafruit.com/adafruit-powerboost-1000c-load-share-usb-charge-boost)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="images/sd.png" width="80"/>](https://www.amazon.de/gp/product/B07G3GMRYF/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
-
-* Next, at Adafruit you'll want to order a [2500 mAh Lithium Polymer battery](https://www.adafruit.com/product/328) (USD 14.95) and a [PowerBoost 1000C battery charging and voltage boost circuit](https://learn.adafruit.com/adafruit-powerboost-1000c-load-share-usb-charge-boost) (USD 19.95).
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="images/battery.png" width="300"/>](https://www.adafruit.com/product/328) [<img src="images/powerboost.png" width="130"/>](https://learn.adafruit.com/adafruit-powerboost-1000c-load-share-usb-charge-boost) 
-
-* Even in a prototype, you don't want to wear out your connectors by plugging in and out USB and battery all the time, so you'll need a small switch to turn the thing on and off. We selected [this one](https://www.mouser.de/ProductDetail/e-switch/eg1248/?qs=f57gQzlyLioiw9IGENOORA==) (EUR 0.60) that will eventually fit our 3D-printed case. (All these prices are excluding shipping. Please don't buy just one switch, you'll hate yourself if it breaks when you solder wires to it.)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="images/switch.png" width="60"/>](https://www.mouser.de/ProductDetail/e-switch/eg1248/?qs=f57gQzlyLioiw9IGENOORA==)
+* Even in a prototype, you don't want to wear out your connectors by plugging in and out USB and battery all the time, so you'll need a small switch to turn the thing on and off. We selected [this one](https://www.mouser.de/ProductDetail/e-switch/eg1248/?qs=f57gQzlyLioiw9IGENOORA==) (EUR 0.60) that will eventually fit our 3D-printed case. (All these prices are excluding shipping. Please don't buy just one switch, you'll hate yourself if it breaks when you solder wires to it.)<br>[![](images/switch.png)](https://www.mouser.de/ProductDetail/e-switch/eg1248/?qs=f57gQzlyLioiw9IGENOORA==)
 
 All these places deliver quickly, usually within just a few days. While you wait for the stuff to arrive, you may want to learn more about Raspberry Pi and Raspbian (the Debian based Linux operating system that we will use) as well as read the description of the Adafruit PowerBoost 1000C thing. (It's essentially the guts of a USB-in USB-out power bank where you plug in a battery of your choice.)
 
@@ -50,31 +42,35 @@ Once you have all the stuff it's time to get going.
 
 The screen is made to be on top of a full size Raspberry Pi, which has huge connectors (USB, Ethernet) sitting on it. Since we want our eventual device to be small, we want the Pi Zero to be snug and close to the screen. This is hard because the pins are too long, and the plastic of the header connector is in the way.
 
-<img src="images/distance.png" width="400"/>
+![](images/distance.png)
  
 At this point, take a small screwdriver and very carefully pry off the black plastic bar on the header connector.
 
-<img src="images/prying.png" width="400"/>
+![](images/prying.png)
 
 Now use the angled clippers to clip off the heaer connector pins until about 5mm of each pin is left.
 
-<img src="images/clipped.png" width="400"/>
+![](images/clipped.png)
 
 Next we will solder on the power wires. Twist together some red and black insulated wire, and solder it on the two test points at the back of the micro-USB connector marked PWR on the board as shown. (Sometimes these points are labelled PP1 and PP6, sometimes they are not.) Just make sure the plus (red) and minus (black) are not swapped. As you can see we used the mounting hole as strain relief in this prototype.
 
-<img src="images/testpoints.png" height="200"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/powerwire.png" height="200"/>
+![](images/testpoints.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](images/powerwire.png)
 
 Next we take the other end of the power wires and solder them to the Adafruit Powerboost board as shown.
 
-<img src="images/power2boost-back.png" height="300"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/power2boost-front.png" height="300"/>
+![](images/power2boost-back.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](images/power2boost-front.png)
 
 Now we take two new pieces of wire (can both be black), twist them together and solder one end to two pins on the switch. Can be the left and middle or the right and the middle pin. On the other side, solder thse wires to the GND and EN contacts on the Powerboost board as shown. Because the Powerboost has an enable pin, the true power to the Pi, screen and eventual USB accessories never flows through the switch: the EN (enable) is only an input that turns the power boost circuit on and off.
 
-<img src="images/switch-wired.png" height="250"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/switch2powerboost.png" height="250"/>
+![](images/switch-wired.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](images/switch2powerboost.png)
 
 After you carefully plug the Pi Zero into the display, you should now have a tabletop prototype that looks something like the rig in the picture below.
 
-<img src="images/prototype-rig.png" width="600"/>
+![](images/prototype-rig.png)
+
+And if you want to see what it will look and feel like after we have an enclosure, simply use some double-stick tape and some electrical tape to stick these components together.
+
+![](images/proto-taped.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](images/proto-in-hand.jpg)
 
 &nbsp;
 
@@ -126,25 +122,23 @@ Now let's make the screen work.
 
 * Install the driver:<br><br>`git clone https://github.com/pimoroni/hyperpixel4`<br>`cd hyperpixel4`<br>`sudo ./install.sh`
 
-> (If you want a landscape screen orientation, you are done with the screen now, and you can skip the next few steps and continue at `sudo reboot` below.)
-
 * Install dirstributed kernel module support and kernel-headers. (Note: It may seem like it's stuck, but it just takes a while.)<br><br>`sudo apt install dkms raspberrypi-kernel-headers`
 
 * Replace the touch screen driver by an alternative driver that allows for portrait rotations:<br><br>`wget https://github.com/pimoroni/HyperPixel4TouchScreen/releases/download/v1.0/hyperpixel4-goodix-dkms_1.0_all.deb`<br>`sudo dpkg -i hyperpixel4-goodix-dkms_1.0_all.deb`<br>`git clone https://github.com/pimoroni/HyperPixel4TouchScreen`<br>`cd HyperPixel4TouchScreen/driver`<br>`make build`<br>`sudo make install`
 
-* Then replace some of the settings in /boot/config.txt to adjust for portrait rotation:<br><br>`sudo sed -i 's/dtoverlay=hyperpixel4/dtoverlay=hyperpixel4:rotate_0/g' /boot/config.txt`<br>`sudo sed -i 's/framebuffer_width=800/framebuffer_width=480/g' /boot/config.txt`<br>`sudo sed -i 's/framebuffer_height=480/framebuffer_height=800/g' /boot/config.txt`<br>`sudo sed -i 's/display_rotate=3/display_rotate=0/g' /boot/config.txt`
+* Then replace some of the settings in /boot/config.txt to adjust for portrait rotation:<br><br>`sudo sed -i 's/^dtoverlay=hyperpixel4/dtoverlay=hyperpixel4:rotate_0/g' /boot/config.txt`<br>`sudo sed -i 's/framebuffer_width=800/framebuffer_width=480/g' /boot/config.txt`<br>`sudo sed -i 's/framebuffer_height=480/framebuffer_height=800/g' /boot/config.txt`<br>`sudo sed -i 's/display_rotate=3/display_rotate=0/g' /boot/config.txt`
 
-* Now enter `sudo reboot` and wait. Your device should wake up with a working touch screen.
+* Now reboot and wait. Your device should wake up with a working touch screen.<br><br>`sudo reboot`
 
 ### On-screen keyboard
 
-To be able to display a keyboard that is really usable on this small screen, we are using a fork of the standard 'matchbox-keyboard' utility that allows different fonts on the keys and different layouts. 
+To be able to display a keyboard that is really usable on this small screen, we are using a fork of the standard 'matchbox-keyboard' utility that allows different fonts on the keys and different layouts.
 
-* ssh into your Pi again, and install some packages needed to compile the kayboard:<br><br>`sudo apt install libtool autoconf libfakekey-dev libxft-dev`
+* ssh into your Pi again, and install some packages needed to compile the keyboard:<br><br>`sudo apt install libtool autoconf libfakekey-dev libxft-dev`
 
 * Then get and compile the keybaord source.<br><br>`git clone https://github.com/xlab/matchbox-keyboard`<br>`cd  matchbox-keyboard`<br>`./autogen.sh`<br>`make`<br>`sudo make install`
 
-* `sudo nano /usr/share/applications/matchbox-keyboard.desktop` and put in the following:
+* `sudo nano /usr/share/applications/toggle-matchbox-keyboard.desktop` and put in the following:
 
 ```
 [Desktop Entry]
@@ -173,27 +167,17 @@ fi
 
 * `sudo chmod a+x /usr/local/bin/toggle-matchbox-keyboard.sh`
 
-* Copy the keyboard definition file and to supporting png images:<br><br>`cd ~`<br>`git clone https://github.com/ropg/hyper-pi`<br>`sudo cp hyper-pi/files/keyboard/* /usr/local/share/matchbox-keyboard`
+* Copy the keyboard definition file and supporting png images:<br><br>`cd ~`<br>`git clone https://github.com/ropg/hyper-pi`<br>`sudo cp hyper-pi/files/keyboard/* /usr/local/share/matchbox-keyboard`
  
 ### Final configuration
 
-This copies over from this repository the files that I have modified to make this work. This includes the keyboard definition file, the toggle-matchbox-keyboard files to turn the keyboard on and off and the 'panel' file to set up the desktop.
+* Our 'panels' file adds the keyboard toggle in the top and sets up the desktop for minimal space: no tray in the top bar, removing some things like audio control and eject button.<br><br>`cp hyper-pi/files/panel /home/pi/.config/lxpanel/LXDE-pi/panels`
 
-```
-cd ~
-git clone https://github.com/ropg/hyper-pi
-cd hyper-pi/files
-sudo cp usr/share/applications/* /usr/share/applications
-sudo cp usr/local/bin/* /usr/local/bin
-sudo chmod a+x /usr/local/bin/toggle-matchbox-keyboard.sh
-sudo cp usr/local/share/matchbox-keyboard/* /usr/local/share/matchbox-keyboard
-mkdir -p /home/pi/.config/lxpanel/LXDE-pi/panels
-cp home/pi/.config/lxpanel/LXDE-pi/panels/* /home/pi/.config/lxpanel/LXDE-pi/panels
-mkdir -p /home/pi/.config/lxterminal
-cp home/pi/.config/lxterminal/* /home/pi/.config/lxterminal
-```
+* Make lxterminal open a narrower window.<br><br>`sudo sed -i 's/^Exec=lxterminal/Exec=lxterminal --geometry=58x30/g' /usr/share/raspi-ui-overrides/applications/lxterminal.desktop`
 
-* Reboot the pi with `sudo reboot` and wait for the system to come back.
+* Install 'netsurf', a tiny browser that renders a bit better than chromium on such a narrow display.<br><br>`sudo apt install netsurf`
+
+* Reboot and wait for the system to come back.<br><br>`sudo reboot`
 
 &nbsp;
 

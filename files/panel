@@ -62,7 +62,7 @@ Plugin {
   Config {
     Button {
       id=toggle-matchbox-keyboard.desktop
-	}
+    }
     Button {
       id=lxde-x-www-browser.desktop
     }
