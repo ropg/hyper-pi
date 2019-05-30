@@ -136,7 +136,7 @@ To be able to display a keyboard that is really usable on this small screen, we 
 
 * ssh into your Pi again, and install some packages needed to compile the keyboard:<br><br>`sudo apt install libtool autoconf libfakekey-dev libxft-dev`
 
-* Then get and compile the keybaord source.<br><br>`git clone https://github.com/xlab/matchbox-keyboard`<br>`cd  matchbox-keyboard`<br>`./autogen.sh`<br>`make`<br>`sudo make install`
+* Then get and compile the keyboard source.<br><br>`git clone https://github.com/xlab/matchbox-keyboard`<br>`cd  matchbox-keyboard`<br>`./autogen.sh`<br>`make`<br>`sudo make install`
 
 * `sudo nano /usr/share/applications/toggle-matchbox-keyboard.desktop` and put in the following:
 
