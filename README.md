@@ -8,7 +8,7 @@
 
 ### Introduction
 
-Mobile phones are great, but all those features come at a price. With each passing year, the walls of the Google or Apple-owned gardens are closing in on us. We have no control over the sofwtare that runs on our phones. Wouldn't it be cool to have a networked device that fits in your pocket where you control what software runs on it? As it turns out: no amount of homebrew hacking can match the commercial products, but by combining and tinkering with some available products we can create something that is mighty small and (at least to me) surprisingly usable for some purposes. It's by no means a phone, but it is a start towards some kind of open communicator.
+Mobile phones are great, but all those features come at a price. With each passing year, the walls of the Google or Apple-owned gardens are closing in on us. We have no control over the software that runs on our phones. Wouldn't it be cool to have a networked device that fits in your pocket where you control what software runs on it? As it turns out: no amount of homebrew hacking can match the commercial products, but by combining and tinkering with some available products we can create something that is mighty small and (at least to me) surprisingly usable for some purposes. It's by no means a phone, but it is a start towards some kind of open communicator.
 
 The end product is a device that centers on the Hyperpixel 4" 800x480 pixels capacitive touch screen. That screen sells with a circuit board that allows you to plug a full-sized Raspberry Pi into it, but we plug in the much smaller Raspberry Pi Zero instead.
 
